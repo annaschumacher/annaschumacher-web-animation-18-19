@@ -1,0 +1,257 @@
+/* ALGEMEEN */
+
+body {
+  background-color: black;
+  width: 80%;
+  margin: auto;
+}
+
+p {
+  color: white;
+  font-family: "futura", sans-serif;
+  font-weight: bold;
+  font-size: 7vw;
+  /* text-align: center; */
+  margin: 0 auto;
+  position: absolute;
+  bottom: 10%;
+  left: 32.5vw;
+  /* width: 100%; */
+}
+
+/* TEKST */
+span:before { /* content toevoegen vóór een element */
+  content: 'HELLO';
+  animation: textswap infinite 4s; /* loop van 4 seconden */
+}
+
+@keyframes textswap {
+  0% {
+    content: 'HELLO'
+  }
+  25%{
+    content: 'HELLO'
+  }
+  50%{
+    content: 'HELLO'
+  }
+  75%{
+    content: 'BYE' /* bij 3 seconden 'bye' achter 'ot' */
+  }
+  100%{
+    content: 'HELLO'
+  }
+}
+
+/* OGEN */
+
+.eyes {
+  position: absolute;
+  top: 10%;
+  /* transform: translateY(-50%); */
+  width: 100%;
+  text-align: center;
+  left: 0;
+}
+
+.eye1 {
+  width: 10em;
+  height: 6em;
+  background: white;
+  display: inline-block;
+  margin: 4vw;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  transition: height 250ms;
+}
+
+.eye2 {
+  width: 10em;
+  height: 6em;
+  background: white;
+  display: inline-block;
+  margin: 4vw;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  transition: height 250ms;
+}
+
+.pupil {
+  width: 60px;
+  height: 60px;
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); /* pupil in het midden van het oog bij refreshen */
+  border-radius: 50%;
+}
+
+.close {
+  -webkit-animation: sluiten 0.8s cubic-bezier(0,.46,.01,.81);
+  /* transform-origin: center; */
+}
+
+@keyframes sluiten {
+  0% {
+    height: 6em;
+  }
+  50% {
+    height: 0;
+    transform: translateY(3vh); /* oog dicht vanuit midden */
+  }
+  100% {
+    height: 6em;
+  }
+}
+
+.knipoog {
+  -webkit-animation: knipoog 0.8s cubic-bezier(0,.46,.01,.81);
+}
+
+@keyframes knipoog {
+  0% {
+    height: 6em;
+  }
+  50% {
+    height: 0em;
+    transform: translateY(-2vh); /* oog dicht vanuit midden */
+  }
+  100% {
+    height: 6em;
+  }
+}
+
+/* LIGHTMODE */
+
+.light {
+  background: white;
+}
+
+.eye1light {
+  background: black;
+}
+
+.eye2light {
+  background: black;
+}
+
+.pupillight {
+  background: white;
+}
+
+.lighttext{
+  color: black;
+}
+
+/* TOUW */
+
+.touw {
+  margin-left: 60%;
+  width: 4vw;
+  top: 0;
+  position: absolute;
+  cursor: pointer;
+  animation: touwanimatie 1s ease-in;
+}
+
+@keyframes touwanimatie { /* slide in bij refreshen */
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.touw:hover {  /* bij hover wordt touw groter */
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.touw:active {  /* wanneer ingedrukt wordt touw nog groter */
+  transform: scale(1.1, 1.3);
+  transition: 0.3s;
+}
+
+/* MOND */
+
+.mond {
+  height: 7vh;
+  width: 10vw;
+  border-radius: 0 0 10vw 10vw;
+  background-color: transparent;
+  position: absolute;
+  top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.mondopen {
+  animation: mondopen 3s cubic-bezier(.92,.03,.68,.58) forwards;  /* mond animeert 1x en wordt door keyframes groter en wit */
+}
+
+@keyframes mondopen {
+  0%{
+    background-color: transparent;
+  }
+  70%{
+    background-color: white;
+    transform: scale(3);
+  }
+  100%{
+    background-color: transparent;
+  }
+}
+
+/* DISCO */
+
+.disco {
+  animation: disco 1s ease-in infinite;  /* kleuren in keyframes animeren in 1 seconde in een loop */
+}
+
+@keyframes disco {
+  0% {
+    background-color: #f785f3;
+  }
+  25% {
+    background-color: #6ecad9;
+  }
+  50% {
+    background-color: #6ed98a;
+  }
+  75% {
+    background-color: #6ecad9;
+  }
+  100% {
+    background-color: #f785f3;
+  }
+} /* CODE VAN NINA */
+
+
+/* BREAKPOINTS */
+@media (max-width: 400px) {  /* wanneer scherm 400px of kleiner is dan de onderste waarden */
+  body {
+    width: 100%;
+    margin: 0;
+  }
+
+  .touw {
+    transform: scale(2.5);
+    margin-left: 70%;
+  }
+
+  .eyes {
+    transform: scale(0.8);
+    margin-top: 20%;
+    display: flex;
+  }
+
+  p {
+    margin-top: 50%;
+  }
+}
