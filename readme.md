@@ -30,7 +30,7 @@ knipoog.addEventListener('click', function() { // bij klikken op linkeroog --> k
 });
 ```
 
-En hoewel het rode element rechts in de poster als bloed wordt gezien, dient het in deze animatie als touw waarop geklikt kan worden om te veranderen van dark naar light mode. Bij hover wordt het touw iets groter, bij active wederom iets groter.
+En hoewel het rode element rechts in de poster als bloed wordt gezien, dient het in deze animatie als touw waarop geklikt kan worden om te veranderen van dark naar light mode. Bij hover wordt het touw iets groter, bij active wederom iets groter. Dit touw staat als een SVG in de HTML.
 
 ```
 .touw:hover {  /* bij hover wordt touw groter */
