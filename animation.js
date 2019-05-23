@@ -56,10 +56,10 @@ document.addEventListener('keypress', function(e){ // bij klikken op spatiebalk 
   }
 });
 
-var discolight = document.querySelector("body");
-document.addEventListener("long-press", function(){ // bij klikken op spatiebalk gaat disco aan en uit
-  body.classList.toggle("disco");
-});
+// var discolight = document.querySelector("body");
+// document.addEventListener("dblclick", function(){ // bij klikken op spatiebalk gaat disco aan en uit
+//   body.classList.toggle("disco");
+// });
 
 var mondanimatie = document.querySelector('.mond');
 document.addEventListener('keypress', function(e){ // bij klikken op 0 komt er een mond tevoorschijn en gaat ook weer weg
