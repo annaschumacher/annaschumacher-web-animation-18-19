@@ -57,7 +57,7 @@ document.addEventListener('keypress', function(e){ // bij klikken op spatiebalk 
 });
 
 var discolight = document.querySelector("body");
-document.addEventListener('dblclick', function(e){ // bij klikken op spatiebalk gaat disco aan en uit
+document.addEventListener('long-press', function(e){ // bij klikken op spatiebalk gaat disco aan en uit
   body.classList.toggle("disco");
 });
 
